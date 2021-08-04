@@ -47,7 +47,15 @@ RSpec.describe 'Competition Show' do
     it 'displays average age of associated players' do
       visit "/competitions/#{@competition1.id}"
 
-      expect(page).to have_content('14.0')
+      expect(page).to have_content('Average Age: 14.0')
+    end
+
+    it 'links to new team registration' do
+      visit "/competitions/#{@competition1.id}"
+
+      click_on('Register Team')
+
+      expect(current_path).to eq('/teams/new')
     end
   end
 end
