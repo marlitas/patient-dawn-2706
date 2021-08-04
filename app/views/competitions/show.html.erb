@@ -2,3 +2,9 @@
 
 <p>Location: <%= @competition.location %> </p>
 <p>sport: <%= @competition.sport %> </p>
+
+<h2>Registered Teams</h2>
+<% @competition.teams.each do |team| %>
+  <p> <%= team.nickname %> </p>
+  <p> <%= team.hometown %> </p>
+<% end %>
