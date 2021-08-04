@@ -32,7 +32,7 @@ RSpec.describe 'Competition Show' do
       expect(page).to_not have_content(@competition2.name)
     end
 
-    it 'displays the nicknames and hometowns of teams in competition' do
+    it 'displays the nicknames and hometowns of associated teams' do
       visit "/competitions/#{@competition1.id}"
 
       expect(page).to have_content(@team1.nickname)
@@ -42,6 +42,12 @@ RSpec.describe 'Competition Show' do
 
       expect(page).to_not have_content(@team3.nickname)
       expect(page).to_not have_content(@team3.hometown)
+    end
+
+    it 'displays average age of associated players' do
+      visit "/competitions/#{@competition1.id}"
+
+      expect(page).to have_content('14.0')
     end
   end
 end
