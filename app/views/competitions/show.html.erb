@@ -3,7 +3,7 @@
 <p>Location: <%= @competition.location %> </p>
 <p>sport: <%= @competition.sport %> </p>
 
-<%= link_to 'Register Team', '/teams/new' %>
+<%= link_to 'Register Team', "/competitions/#{@competition.id}/teams/new" %>
 
 <h2>Registered Teams</h2>
 <% @competition.teams.each do |team| %>

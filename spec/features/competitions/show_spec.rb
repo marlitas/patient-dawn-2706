@@ -55,7 +55,7 @@ RSpec.describe 'Competition Show' do
 
       click_on('Register Team')
 
-      expect(current_path).to eq('/teams/new')
+      expect(current_path).to eq("/competitions/#{@competition1.id}/teams/new")
     end
   end
 end
